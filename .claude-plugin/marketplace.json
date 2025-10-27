@@ -1,26 +1,14 @@
 {
-  "name": "my-team-plugin-marketplace",
+  "name": "hyperskill-marketplace",
   "owner": {
-    "name": "Your Organization",
-    "email": "team@your-org.com"
+    "name": "Hyperskill Inc.",
+    "email": "dev@hyperskill.org"
   },
   "metadata": {
-    "description": "A curated collection of Claude Code plugins for our team",
-    "version": "1.1.0"
+    "description": "A curated collection of Claude Code plugins by Hyperskill team",
+    "version": "1.0.0"
   },
   "plugins": [
-    {
-      "name": "hello-world",
-      "description": "A simple example plugin demonstrating basic Claude Code plugin functionality",
-      "version": "1.0.0",
-      "author": {
-        "name": "Your Team"
-      },
-      "source": "./plugins/hello-world",
-      "category": "examples",
-      "tags": ["example", "tutorial", "getting-started"],
-      "keywords": ["example", "tutorial", "getting-started"]
-    },
     {
       "name": "plugin-development",
       "description": "Assist with Claude Code plugin development: scaffold, validate, review, and team-ready distribution",

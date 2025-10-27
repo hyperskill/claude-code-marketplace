@@ -1,38 +1,38 @@
-# Claude Code Plugin Marketplace Template
+# Hyperskill Claude Code Plugin Marketplace
 
-A GitHub template repository for creating and managing your own Claude Code plugin marketplace with a plugin development toolkit.
+A curated collection of Claude Code plugins maintained by the Hyperskill team.
 
 ## Quick Start
 
-### Use as Template
+### Install This Marketplace
 
-1. Click "Use this template" button on GitHub
-2. Create your new repository
-3. Clone your new repository:
+1. **Add the marketplace to Claude Code**:
    ```bash
-   git clone https://github.com/your-org/your-marketplace-name.git
-   cd your-marketplace-name
-   ```
-4. Customize the marketplace:
-   ```bash
-   # Update marketplace metadata
-   vim .claude-plugin/marketplace.json
+   /plugin marketplace add hyperskill/claude-code-marketplace
    ```
 
-5. Install the plugin development tools:
+2. **Install a plugin**:
    ```bash
+   /plugin install plugin-development@hyperskill-marketplace
+   ```
+
+3. **Or clone locally for development**:
+   ```bash
+   git clone https://github.com/hyperskill/claude-code-marketplace.git
+   cd claude-code-marketplace
+   
    # Add your local marketplace
-   /plugin marketplace add ./path-to-your-marketplace
+   /plugin marketplace add ./
    
    # Install the plugin-development plugin
-   /plugin install plugin-development@my-team-plugin-marketplace
+   /plugin install plugin-development@hyperskill-marketplace
    ```
 
-6. Test locally (see [Testing](#testing) section)
+For more details, see the [Testing](#testing) section below.
 
 ## What's Included
 
-This template provides:
+This marketplace provides:
 
 - **Marketplace Configuration** (`.claude-plugin/marketplace.json`): Central registry for all plugins following the official schema
 - **Plugin Development Plugin** (`plugin-development`): Comprehensive toolkit for creating, validating, and managing plugins with:
@@ -40,10 +40,6 @@ This template provides:
   - Automated validation and testing
   - Best practices and documentation integration
   - Review agent for release readiness
-- **Sample Plugin** (`hello-world`): Fully functional example demonstrating:
-  - Proper plugin manifest structure
-  - Command with frontmatter
-  - Best practices and documentation
 - **Comprehensive Documentation** (`docs/`): Complete guides for plugin development, hooks, settings, commands, skills, and sub-agents
 - **GitHub Actions**: Automated plugin validation workflow
 
@@ -55,13 +51,13 @@ Edit `.claude-plugin/marketplace.json` to customize your marketplace:
 
 ```json
 {
-  "name": "my-team-plugin-marketplace",
+  "name": "hyperskill-marketplace",
   "owner": {
-    "name": "Your Organization",
-    "email": "team@your-org.com"
+    "name": "Hyperskill Inc.",
+    "email": "dev@hyperskill.org"
   },
   "metadata": {
-    "description": "A curated collection of plugins for our team",
+    "description": "A curated collection of Claude Code plugins by Hyperskill team",
     "version": "1.0.0"
   },
   "plugins": [
@@ -79,10 +75,10 @@ You can configure automatic marketplace installation for team projects by adding
 ```json
 {
   "extraKnownMarketplaces": {
-    "team-tools": {
+    "hyperskill": {
       "source": {
         "source": "github",
-        "repo": "your-org/your-marketplace-name"
+        "repo": "hyperskill/claude-code-marketplace"
       }
     }
   }
@@ -97,7 +93,7 @@ When team members trust the repository folder, Claude Code automatically install
 
 1. **Navigate to your project directory**:
    ```bash
-   cd your-marketplace-name
+   cd claude-code-marketplace
    ```
 
 2. **Start Claude Code**:
@@ -112,13 +108,11 @@ When team members trust the repository folder, Claude Code automatically install
 
 4. **Install a plugin**:
    ```
-   /plugin install hello-world@marketplace-name
-   /plugin install plugin-development@marketplace-name
+   /plugin install plugin-development@hyperskill-marketplace
    ```
 
 5. **Test commands**:
    ```
-   /hello World
    /plugin-development:validate
    ```
 
@@ -134,10 +128,10 @@ Once published to GitHub, users can add your marketplace:
 
 ```bash
 # Add marketplace from GitHub
-/plugin marketplace add your-org/your-repo-name
+/plugin marketplace add hyperskill/claude-code-marketplace
 
 # Install plugins
-/plugin install plugin-name@your-marketplace-name
+/plugin install plugin-name@hyperskill-marketplace
 ```
 
 ## Creating New Plugins
@@ -148,7 +142,7 @@ This template includes a powerful `plugin-development` plugin that automates plu
 
 ```bash
 # After cloning and adding this marketplace
-/plugin install plugin-development@my-team-plugin-marketplace
+/plugin install plugin-development@hyperskill-marketplace
 
 # Scaffold a new plugin
 /plugin-development:init my-new-plugin
@@ -187,8 +181,8 @@ Edit `plugins/my-plugin/.claude-plugin/plugin.json`:
     "email": "your-email@example.com",
     "url": "https://github.com/your-username"
   },
-  "homepage": "https://github.com/your-org/your-marketplace-name",
-  "repository": "https://github.com/your-org/your-marketplace-name",
+  "homepage": "https://github.com/hyperskill/claude-code-marketplace",
+  "repository": "https://github.com/hyperskill/claude-code-marketplace",
   "license": "MIT",
   "keywords": ["keyword1", "keyword2"]
 }
